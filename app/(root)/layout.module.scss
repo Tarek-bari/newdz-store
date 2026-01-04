@@ -1,0 +1,12 @@
+.main {
+  font-family: var(--font-noto-kufi-arabic), sans-serif;
+  .header {
+    background: #ffffff;
+  }
+
+  .mainContainer {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 3rem);
+  }
+}

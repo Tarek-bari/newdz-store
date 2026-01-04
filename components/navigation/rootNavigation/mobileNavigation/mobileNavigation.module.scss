@@ -1,0 +1,46 @@
+.mobileNavIcon {
+  @media (min-width: 695px) {
+    display: none;
+  }
+}
+
+.menuContainer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 65%;
+  height: 100%;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: right 0.3s ease;
+  z-index: 20;
+
+  &.openMenu {
+    right: 0;
+  }
+
+  &.closedMenu {
+    right: -100%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 3px;
+    border: 1px solid #050505;
+    border-radius: 2px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}

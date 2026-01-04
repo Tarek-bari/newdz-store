@@ -1,0 +1,30 @@
+.main {
+  max-width: 1440px;
+  height: 88px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 3rem);
+  // margin-inline: 14px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 1475px) {
+    margin-inline: auto;
+  }
+
+  .links {
+    display: none;
+    @media (min-width: 695px) {
+      display: block;
+    }
+  }
+
+  .basket {
+    display: none;
+
+    @media (min-width: 520px) {
+      display: block;
+    }
+  }
+}

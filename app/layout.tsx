@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./global.css";
+import "./global.scss";
 
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
@@ -31,7 +31,6 @@ const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${notoKufiAarabic.variable}`}
       >
-        <h1>Hello</h1>
         {children}
       </body>
     </html>
