@@ -1,13 +1,16 @@
-.main {
-  max-width: 1440px;
+@use "../../../styles/mixins" as m;
+
+.wrapper {
+  // max-width: 1440px;
+  // padding-inline: clamp(1rem, 3vw, 3rem);
+  // margin-inline: auto;
+  @include m.container;
   height: 88px;
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 3rem);
-  // margin-inline: 14px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(1rem, 6vw, 3rem);
 
   @media (min-width: 1475px) {
     margin-inline: auto;
@@ -15,7 +18,7 @@
 
   .links {
     display: none;
-    @media (min-width: 695px) {
+    @media (min-width: 1281px) {
       display: block;
     }
   }

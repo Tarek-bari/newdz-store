@@ -3,12 +3,15 @@ import Image from "next/image";
 import NavLinks from "./navLinks/navLinks";
 import MobileNavigation from "./mobileNavigation/mobileNavigation";
 import SearchField from "@/components/search/root/searchInput";
+import Link from "next/link";
 
 const ArabicNavBar = () => {
   return (
-    <nav className={styles.main}>
+    <nav className={styles.wrapper}>
       <div>
-        <Image src="./icons/logo.svg" width={96} height={32} alt="Logo" />
+        <Link href="/">
+          <Image src="./icons/logo.svg" width={96} height={32} alt="Logo" />
+        </Link>
       </div>
       <SearchField />
       <div className={styles.links}>

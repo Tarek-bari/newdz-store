@@ -4,6 +4,16 @@ export const links = [
     label: "ألرئيسية",
   },
   {
+    route: "/categories",
+    label: "التصنيفات",
+  },
+
+  {
+    route: "/products",
+    label: "المنتجات",
+  },
+
+  {
     route: "/aboutus",
     label: "من نحن",
   },

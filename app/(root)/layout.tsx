@@ -8,7 +8,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <header className={styles.header}>
         <ArabicNavBar />
       </header>
-      <main className={styles.mainContainer}>{children}</main>
+      <main>{children}</main>
     </main>
   );
 };

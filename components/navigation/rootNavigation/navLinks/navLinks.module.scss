@@ -13,7 +13,7 @@
 .desktopNavLinks {
   display: flex;
   flex-direction: row;
-  gap: clamp(1rem, 4vw, 6rem);
+  gap: clamp(0.3rem, 4vw, 6rem);
 }
 
 .mobileNavLinks {
