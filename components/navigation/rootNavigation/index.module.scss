@@ -1,10 +1,7 @@
-@use "../../../styles/mixins" as m;
+// @use "../../../styles/mixins" as m;
 
 .wrapper {
-  // max-width: 1440px;
-  // padding-inline: clamp(1rem, 3vw, 3rem);
-  // margin-inline: auto;
-  @include m.container;
+  // @include m.container;
   height: 88px;
   display: flex;
   flex-direction: row;

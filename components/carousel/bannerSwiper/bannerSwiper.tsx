@@ -1,48 +1,77 @@
 "use client";
 import Image from "next/image";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 import styles from "./bannerSwiper.module.scss";
-import "swiper/css";
 
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import "swiper/css";
+import { useRef, useState } from "react";
 
-const BannerSwiper = ({ images }: { images: string[] }) => {
+interface BannerSlide {
+  img: string;
+  title: string;
+  desc: string;
+  pagination: {
+    category: string;
+  };
+}
+
+const BannerSwiper = ({ slides }: { slides: BannerSlide[] }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
+
   return (
-    // <div className={styles.bannerSwiper}>
-    <Swiper
-      modules={[Navigation, Pagination]}
-      spaceBetween={0}
-      slidesPerView={1}
-      navigation
-      // autoplay={{ delay: 1000 }}
-      loop={true}
-      pagination={{ clickable: true }}
-      className={styles.swiper}
-    >
-      {images.map((src) => {
-        return (
-          <SwiperSlide key={src} className={styles.swiperSlide}>
-            <div className={styles.textSlide}>
-              <h1>Picture Desc</h1>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-                consequatur perferendis non voluptate omnis harum?
-              </p>
-            </div>
-            <Image
-              src={src}
-              alt="Banner Image"
-              fill
-              className={styles.imageSlide}
-            />
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
-    // </div>
+    <div className={styles.bannerSwiper}>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        onSlideChange={(swiper) => {
+          setActiveIndex(swiper.activeIndex);
+        }}
+        modules={[Navigation]}
+        grabCursor
+        initialSlide={0}
+        slidesPerView="auto"
+        navigation
+        className={styles.swiper}
+      >
+        {slides.map((slide, index) => {
+          return (
+            <SwiperSlide key={index} className={styles.swiperSlide}>
+              <div className={styles.textSlide}>
+                <h1>{slide.title}</h1>
+                <p>{slide.desc}</p>
+              </div>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={slide.img}
+                  alt="Banner Image"
+                  // fill
+                  width={1920}
+                  height={1080}
+                  priority
+                  className={styles.image}
+                />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+      <div className={styles.pagination}>
+        {slides.map((slide, index) => (
+          <span
+            key={index}
+            className={`${index === activeIndex ? styles.active : ""} ${styles.paginationItem}`}
+            onClick={() => swiperRef.current?.slideTo(index)}
+          >
+            {slide.pagination.category}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 

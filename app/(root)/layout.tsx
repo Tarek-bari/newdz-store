@@ -4,12 +4,12 @@ import styles from "./layout.module.scss";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main dir="rtl" className={styles.main}>
+    <div dir="rtl" className={styles.rootLayout}>
       <header className={styles.header}>
         <ArabicNavBar />
       </header>
-      <main>{children}</main>
-    </main>
+      <main className={styles.main}>{children}</main>
+    </div>
   );
 };
 

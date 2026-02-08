@@ -26,7 +26,7 @@ const NavLinks = ({
           <Link
             key={item.route}
             href={item.route}
-            className={isActive ? styles.activeItem : styles.navItem}
+            className={`${styles.navItem} ${isActive ? styles.activeItem : ""}`}
             onClick={onLinkClick}
           >
             <p>{item.label}</p>

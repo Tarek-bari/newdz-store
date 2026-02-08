@@ -1,6 +1,12 @@
-.main {
+@use "../../styles//mixins" as m;
+
+.rootLayout {
   font-family: var(--font-noto-kufi-arabic), sans-serif;
   .header {
-    background: #ffffff;
+    @include m.container;
+  }
+
+  main {
+    background: #f8f9fa;
   }
 }
