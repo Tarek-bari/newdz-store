@@ -1,7 +1,7 @@
-// @use "../../../styles/mixins" as m;
+@use "../../../styles/mixins" as m;
 
 .wrapper {
-  // @include m.container;
+  @include m.container;
   height: 88px;
   display: flex;
   flex-direction: row;

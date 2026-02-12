@@ -1,9 +1,5 @@
 @use "../../styles//mixins" as m;
 
-// .bannerWrapper {
-//   @include m.container;
-// }
-
 .wrapper {
   @include m.container;
 }
