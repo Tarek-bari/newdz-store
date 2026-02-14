@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import NavLinks from "./navLinks/navLinks";
 import MobileNavigation from "./mobileNavigation/mobileNavigation";
-import SearchField from "@/components/search/root/searchInput";
+import SearchField from "@/components/root/search/root/searchInput";
 import Link from "next/link";
 
 const ArabicNavBar = () => {

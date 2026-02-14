@@ -1,8 +1,8 @@
-@use "../../../../styles/mixins" as m;
+@use "../../../styles/mixins" as m;
 
 .banner {
   position: relative;
-  height: 100vh;
+  height: 632px;
 }
 
 .bannerSwiper {
@@ -39,7 +39,7 @@
     text-align: right;
     display: flex;
     flex-direction: column;
-    gap: 3.6rem;
+    gap: 2.8rem;
   }
 
   .subtitle,
@@ -176,6 +176,7 @@
   }
 
   .pagination {
+    @include m.container;
     position: absolute;
     bottom: 1.4rem;
     left: 0;

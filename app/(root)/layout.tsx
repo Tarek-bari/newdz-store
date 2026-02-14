@@ -1,4 +1,4 @@
-import ArabicNavBar from "@/components/navigation/rootNavigation";
+import ArabicNavBar from "@/components/root/rootNavigation";
 import React from "react";
 import styles from "./layout.module.scss";
 
