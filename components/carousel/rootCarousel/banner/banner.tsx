@@ -42,16 +42,16 @@ const Banner = () => {
           // grabCursor
           initialSlide={0}
           slidesPerView={1}
-          navigation
+          // navigation
           autoplay={{
-            delay: 1500,
+            delay: 2000,
             disableOnInteraction: true,
           }}
           className={styles.swiper}
         >
           {(bannerSlides as BannerSlide[]).map((slide, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
-              <div className={styles.content}>
+              <div className={styles.contentCntainer}>
                 <article className={styles.contentCard} dir="rtl">
                   <p className={styles.subtitle}>{slide.subtitle}</p>
                   <h2 className={styles.title}>{slide.title}</h2>

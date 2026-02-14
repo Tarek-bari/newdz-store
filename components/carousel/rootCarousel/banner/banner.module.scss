@@ -22,27 +22,24 @@
     height: 100%;
   }
 
-  .content {
+  .contentCntainer {
     @include m.container;
     position: relative;
     z-index: 12;
-    width: 100%;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    pointer-events: none;
   }
 
   .contentCard {
-    width: min(45vw, 660px);
-    padding: clamp(1.2rem, 2.1vw, 2.1rem);
+    padding-right: clamp(1.2rem, 2.1vw, 2.1rem);
     color: #fff;
     text-align: right;
-    pointer-events: auto;
     display: flex;
     flex-direction: column;
-    gap: 2.6rem;
+    gap: 3.6rem;
   }
 
   .subtitle,
@@ -58,39 +55,36 @@
   }
 
   .subtitle {
-    margin: 0 0 0.4rem;
-    font-size: clamp(1.08rem, 1.3vw, 1.26rem);
+    font-size: clamp(0.95rem, 0.82rem + 0.55vw, 1.12rem);
+    line-height: 1.45;
     color: rgba(236, 239, 241, 0.95);
   }
 
   .title {
-    margin: 0;
-    font-size: clamp(1.8rem, 3vw, 3.1rem);
-    line-height: 1.18;
+    font-size: clamp(1.75rem, 1.15rem + 2.5vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01rem;
     color: #fff;
     text-shadow: 0 6px 28px rgba(0, 0, 0, 0.42);
   }
 
   .body {
-    margin: 1rem 0 0;
-    max-width: 45ch;
-    font-size: clamp(0.98rem, 1.16vw, 1.18rem);
-    line-height: 1.9;
+    max-width: min(100%, 40rem);
+    font-size: clamp(1rem, 0.92rem + 0.38vw, 1.12rem);
+    line-height: 1.75;
     color: rgba(241, 245, 249, 0.95);
   }
 
   .lightDesc {
-    margin: 0.75rem 0 0;
-    max-width: 40ch;
-    font-size: clamp(0.92rem, 1.04vw, 1.02rem);
-    line-height: 1.85;
+    max-width: min(100%, 40rem);
+    font-size: clamp(0.92rem, 0.87rem + 0.24vw, 1rem);
+    line-height: 1.65;
     color: rgba(219, 229, 236, 0.9);
   }
 
   .categoryButton {
+    opacity: 0;
     width: clamp(320px, 45vw, 360px);
-    margin-left: auto;
-    margin-top: 1.2rem;
     border: 1px solid rgba(255, 255, 255, 0.72);
     background: transparent;
     color: #fff;
@@ -98,10 +92,13 @@
     padding: 0.72rem 1.45rem;
     font-size: clamp(0.9rem, 1.05vw, 1rem);
     font-weight: 700;
+    transform: translateY(24px);
     cursor: pointer;
     transition:
-      background-color 0.6s ease,
-      color 0.6s ease;
+      background-color 560ms ease,
+      color 560ms ease,
+      transform 560ms ease,
+      opacity 560ms ease;
 
     &:hover {
       background: #bde8f3;
@@ -174,6 +171,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    // pointer-events: none;
     filter: brightness(0.82) contrast(1.08) saturate(0.96);
   }
 
@@ -187,19 +185,18 @@
 
   .paginationInner {
     @include m.container;
-    padding-inline: 0;
     display: flex;
-    gap: 0.35rem;
+    padding-inline: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.42);
   }
 
   .paginationItem {
-    flex: 1 1 0;
+    flex: 1;
     text-align: center;
     color: rgba(241, 245, 249, 0.65);
     font-size: clamp(0.74rem, 0.84vw, 0.9rem);
     line-height: 1.35;
-    padding: 0.75rem 0.4rem 0.52rem;
+    padding: 16px 0;
     cursor: pointer;
     border-top: 2px solid transparent;
     transform: translateY(-1px);
@@ -216,9 +213,9 @@
 
 @media (max-width: 900px) {
   .bannerSwiper {
-    // .content {
-    //   padding-top: 4.8rem;
-    // }
+    .content {
+      padding-top: 4.8rem;
+    }
 
     .contentCard {
       width: min(94vw, 540px);
@@ -231,7 +228,7 @@
 
     .body,
     .lightDesc {
-      max-width: 42ch;
+      max-width: 42rem;
     }
 
     .categoryButton {
@@ -247,6 +244,7 @@
     .paginationInner {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      justify-items: center;
       gap: 0.25rem 0.55rem;
       border-top: 0;
       width: min(95vw, 680px);
