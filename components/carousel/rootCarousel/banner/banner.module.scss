@@ -241,30 +241,6 @@
       bottom: 0.7rem;
     }
 
-    .paginationInner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      justify-items: center;
-      gap: 0.25rem 0.55rem;
-      border-top: 0;
-      width: min(95vw, 680px);
-      padding-top: 0.1rem;
-    }
-
-    .paginationItem {
-      border-top: 0;
-      border-bottom: 2px solid transparent;
-      transform: none;
-      padding: 0.35rem 0.35rem 0.55rem;
-      font-size: clamp(0.72rem, 3vw, 0.82rem);
-      white-space: normal;
-      line-height: 1.25;
-      min-height: 2.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .active {
       border-bottom-color: rgba(255, 255, 255, 0.95);
     }
