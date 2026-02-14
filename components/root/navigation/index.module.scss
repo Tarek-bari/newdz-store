@@ -2,7 +2,8 @@
 
 .wrapper {
   @include m.container;
-  height: 76px;
+  height: 68px;
+  max-height: 72px;
   display: flex;
   flex-direction: row;
   align-items: center;
